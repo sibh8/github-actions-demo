@@ -10,6 +10,12 @@ jobs:
       run: |
         pwd
         ls
+    - name: Checkout repo
+      uses: actions/checkout@v1
+    - name: List the Directory
+      run: |
+        pwd
+        ls -a
     - name: Simple JS Action
       id: greet
       uses: actions/hello-world-javascript-action@v1
