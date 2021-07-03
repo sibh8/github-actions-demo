@@ -12,6 +12,8 @@ jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
+    - name: Client Payload
+      run: echo ${{github.events.client_payload.env}}
     - name: Echo a String
       run: echo "Hello World"
     - name: Multiline script
