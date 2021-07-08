@@ -3,7 +3,10 @@ name: Actions Workflow
 on:
   # schedule:
   # - cron: "0/5 * * * *"
-  #push:
+  push:
+    branches:
+    - 'feature/*'
+    - 'feature/**'
   pull_request:
     types:
     - opened
