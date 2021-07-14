@@ -4,7 +4,17 @@ on:
 
 jobs:
   matrix:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: 
+        - ubuntu-latest
+        - macos-latest
+        - windows-latest
+        node-version:
+        - 6
+        - 8
+        - 10
+    runs-on: ${{ matrix.os }}
     steps:
     - name: Get Node Version
       run: |
@@ -12,7 +22,7 @@ jobs:
     - name: Install Node
       uses: actions/setup-node@v1
       with:
-        node-version: 6
+        node-version: ${{ matrix.node-version }}
     - name: Get the post Node version
       run: |
         node -v
