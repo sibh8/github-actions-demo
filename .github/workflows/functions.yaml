@@ -1,7 +1,7 @@
 name: Functions
 on: 
 - push
-- pull-request
+- pull-request  
 
 jobs:
   functions:
