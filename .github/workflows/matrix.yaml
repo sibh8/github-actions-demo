@@ -31,5 +31,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Get the post Node version
+      env:
+          IS_UBUNTU_6: ${{ matrix.is_ubuntu_6 }}
       run: |
         node -v
+        echo IS_UBUNTU_6: $IS_UBUNTU_6
