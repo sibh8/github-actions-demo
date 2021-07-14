@@ -9,5 +9,5 @@ jobs:
       run: |
           echo ${{ contains('Hello','ll') }}
           echo ${{ startsWith('Elephant', 'El') }}
-          echo ${{ endsWith('Integer','er'') }}
-          echo ${{ format('Hello {0} {1}{2}', 'World','!','!') }}
+          echo ${{ endsWith('Integer','er') }}
+          echo ${{ format('Hello {0} {1} {2}', 'World','!','!') }}
