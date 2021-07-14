@@ -1,0 +1,13 @@
+name: Functions
+on: push
+
+jobs:
+  functions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Explore functions
+      run: |
+          echo ${{ contains("hello","ll") }}
+          echo ${{ startsWith("Elephant", "El") }}
+          echo ${{ endsWith("Integer","er"") }}
+          echo ${{ format("Hello {0} {1}{2}", "World","!","!") }}
