@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Explore functions
       run: |
-          echo ${{ contains("hello","ll") }}
-          echo ${{ startsWith("Elephant", "El") }}
-          echo ${{ endsWith("Integer","er"") }}
-          echo ${{ format("Hello {0} {1}{2}", "World","!","!") }}
+          echo ${{ contains('Hello','ll') }}
+          echo ${{ startsWith('Elephant', 'El') }}
+          echo ${{ endsWith('Integer','er'') }}
+          echo ${{ format('Hello {0} {1}{2}', 'World','!','!') }}
