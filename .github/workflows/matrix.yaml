@@ -1,0 +1,18 @@
+name: Matix and Strategies
+
+on: push
+
+jobs:
+  matrix-jobs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+    - name: Log Node Version
+      run: |
+        node -v
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 6
+    - name: Log Node Version
+      run: |
+        node -v
