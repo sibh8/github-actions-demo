@@ -48,3 +48,13 @@ jobs:
       with:
         entrypoint: '/usr/local/bin/node'
         args: '-v'
+  
+  slack-integration:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Display message on slack
+      uses: docker://technosophos/slack-notify
+      env:
+        SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK}}
+        SLACK_MESSAGE: "[Container Actions] Hello from GitHub Actions"
+  
