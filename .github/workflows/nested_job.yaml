@@ -31,7 +31,7 @@ jobs:
     - name: Calculate the Gradle Version
       run: |
         echo "Inside job 3"
-        gradle version
+        gradle -v
   job4: 
     runs-on: ubuntu-latest
     container:
