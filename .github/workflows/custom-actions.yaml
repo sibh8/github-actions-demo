@@ -10,7 +10,7 @@ jobs:
     - name: Checkout the repo
       uses: actions/checkout@v1
     - name: Execute custom action
-      uses: ./github/actions/hello
+      uses: ./.github/actions/hello
       id: greet
       with:
         who-to-greet: "World"
