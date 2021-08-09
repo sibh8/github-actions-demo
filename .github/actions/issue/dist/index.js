@@ -248,7 +248,7 @@ try{
     const body = core.getInput('body');
     const assignees = core.getInput('assignees');
 
-    const octokit = new github.github(token);
+    const octokit = new github.GitHub(token);
     const response = octokit.rest.issues.addAssignees({
                     owner: github.context.repo.owner,
                     repo: github.context.repo.repo,
