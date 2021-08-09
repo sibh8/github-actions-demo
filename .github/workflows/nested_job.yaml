@@ -41,4 +41,4 @@ jobs:
     - name: Calculate kubectl version
       run: |
         echo "Inside job 4"
-        kubectl version --client-only
+        kubectl version --client
