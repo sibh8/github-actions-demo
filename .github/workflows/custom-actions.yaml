@@ -17,3 +17,4 @@ jobs:
     - name: Display the time during the module execution
       run: |
         echo "Time: ${{ steps.greet.outputs.time }}"
+        echo $HELLO
