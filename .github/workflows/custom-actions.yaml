@@ -8,7 +8,7 @@ jobs:
       image: node
     steps:
     - name: Checkout the repo
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
     - name: Execute custom action
       uses: ./.github/actions/hello
       id: greet
