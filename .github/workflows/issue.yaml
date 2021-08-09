@@ -10,7 +10,7 @@ jobs:
     - name: Repo checkout
       uses: actions/checkout@v2
     - name: Create an issue
-      uses: ./github/actions/issue
+      uses: ./.github/actions/issue
       id: issue
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
