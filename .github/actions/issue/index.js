@@ -1,5 +1,5 @@
-const core = required('@actions/core')
-const github = required('@actions/github')
+const core = require('@actions/core')
+const github = require('@actions/github')
 
 try{
     const token = core.getInput('token');
