@@ -16,7 +16,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: Title
         body: Body
-        assignees: 'sibh8,siddheshb'
+        assignees: 'sibh8'
     - name: Display the response
       run: |
         echo "Issue response: ${{ steps.issue.outputs.issue }}"
