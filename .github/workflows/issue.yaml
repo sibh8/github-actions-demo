@@ -14,8 +14,8 @@ jobs:
       id: issue
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        title: Title
-        body: Body
+        title: Title of the actions for customization
+        body: This is an issue created for the github custom actions
         assignees: 'sibh8'
     - name: Display the response
       run: |
