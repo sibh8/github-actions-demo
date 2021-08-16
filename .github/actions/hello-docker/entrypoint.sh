@@ -22,5 +22,5 @@ echo "some stuff"
 echo "::endgroup"
 
 # Exporting environmental variables
-echo "::set-env name=HELLO::hello"
+# echo "::set-env name=HELLO::hello"
 echo "HELLO=hello" >> $GITHUB_ENV
