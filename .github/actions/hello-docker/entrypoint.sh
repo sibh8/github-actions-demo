@@ -10,7 +10,7 @@ echo "::add-mask ::$1"
 
 # Set Output
 time=$(date)
-echo "::set-output ::name=time ::$time"
+echo "::set-output name=time::$time"
 
 echo "Hello $1"
 
