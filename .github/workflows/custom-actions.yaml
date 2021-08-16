@@ -20,3 +20,14 @@ jobs:
       run: |
         echo "Time: ${{ steps.greet.outputs.time }}"
         echo "Value of HELLO: $HELLO"
+    - name: Execute Hello docker action
+      uses: ./.github/actions/hello-docker
+      id: docker-action
+      with:
+        who-to-greet: "Sid-docker"
+    - name: Display from docker action
+      env:
+        HELLO: Ola-Docker
+      run: |
+        echo "Time from Docker: ${{ steps.docker-action.outputs.time }}"
+        echo "Hello $HELLO"
