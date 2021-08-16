@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "::debug ::Debug Message"
-echo "::warning:: Warning Message"
+# echo "::warning:: Warning Message"
 # echo "::error ::Error Message"
 
 
