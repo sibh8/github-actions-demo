@@ -6,9 +6,11 @@ inputs:
     description: "Who to greet"
     required: true
     default: Sid
-output:
+outputs:
   time:
     description: "Time of execution"
+  pacpac:
+    description: "Sample cariable"
 runs:
   using: "docker"
   image: "Dockerfile"

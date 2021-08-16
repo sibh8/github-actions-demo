@@ -6,7 +6,7 @@ echo "::debug ::Debug Message"
 
 
 # Adding a secret.
-echo "::add-mask ::$1"
+echo "::add-mask ::$2"
 
 # Set Output
 time=$(date)
@@ -24,3 +24,4 @@ echo "::endgroup"
 # Exporting environmental variables
 # echo "::set-env name=HELLO::hello"
 echo "HELLO=hello" >> $GITHUB_ENV
+echo "PACPAC=pacpac" >> $GITHUB_ENV

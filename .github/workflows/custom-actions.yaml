@@ -28,6 +28,7 @@ jobs:
     - name: Display from docker action
       env:
         HELLO: Ola-Docker
+        PACPAC: Two
       run: |
         echo "Time from Docker: ${{ steps.docker-action.outputs.time }}"
         echo "Hello $HELLO"
