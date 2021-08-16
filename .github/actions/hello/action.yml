@@ -1,0 +1,14 @@
+name: Hello World
+author: Sid
+description: Action for greeting
+inputs:
+  who-to-greet:
+    description: "Who to greet"
+    required: true
+    default: Sid
+output:
+  time:
+    description: "Time of execution"
+runs:
+  using: "node12"
+  main: "dist/index.js"

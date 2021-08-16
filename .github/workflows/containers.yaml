@@ -1,0 +1,60 @@
+name: Containers
+
+on: push
+
+jobs:
+  containers:
+    runs-on: ubuntu-latest
+    container: 
+      image: node:14-alpine3.14 
+    steps:
+    - name: Log the version
+      run: |
+        node -v
+        cat /etc/os-release
+
+  multi-container:
+    runs-on: ubuntu-latest
+    services:
+      app:
+        image: alialaa17/node-api
+        ports:
+        - 3001:3000
+      mongo:
+        image: mongo
+        ports:
+        - 27017:27017
+    steps:
+    - name: Post a user
+      run: "curl -X POST http://localhost:3001/api/user -H 'Content-Type: application/json' -d '{\"username\": \"hello\", \"address\": \"dwerefd\"}'"
+    - name: Get user
+      run: "curl http://localhost:3001/api/users"
+
+  docker-steps:
+    runs-on: ubuntu-latest
+    container:
+      image: node
+    steps:
+    - name: Log node version
+      run: |
+        node -v
+    - name: Step with docker-steps
+      uses: docker://node:12.22.4-alpine
+      with:
+        entrypoint: '/bin/echo'
+        args: 'Hello World'
+    - name: Log the node version inside step containers
+      uses: docker://node:12.22.4-alpine
+      with:
+        entrypoint: '/usr/local/bin/node'
+        args: '-v'
+  
+  slack-integration:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Display message on slack
+      uses: docker://technosophos/slack-notify
+      env:
+        SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK}}
+        SLACK_MESSAGE: "[Container Actions] Hello from GitHub Actions"
+  

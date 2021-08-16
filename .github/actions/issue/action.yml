@@ -1,0 +1,19 @@
+name: Open GitHub Issue
+description: Action that opens a Github issue
+inputs:
+  token: 
+    description: 'The secret token'
+    required: true
+  title:
+    description: 'Issue Title'
+    required: true
+  body:
+    description: 'Message Body'
+  assignees:
+    description: 'The people who will be assigned this ticket'
+outputs:
+  issue:
+    description: 'The issue object as a JSON string'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

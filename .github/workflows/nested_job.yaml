@@ -1,0 +1,44 @@
+name: Nested Jobs
+
+on: [push]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    container:
+      image: node
+    steps:
+    - name: Calculate the Node Version
+      run: |
+        echo "Inside Job 1"
+        node -v
+  job2:
+    runs-on: ubuntu-latest
+    container:
+      image: maven:3.8-jdk-11-slim
+    needs: job1
+    steps:
+    - name: Calculate Maven Version
+      run: |
+        echo "Inside job 2"
+        mvn --version
+  job3:
+    runs-on: ubuntu-latest
+    container:
+      image: gradle
+    needs: job1
+    steps:
+    - name: Calculate the Gradle Version
+      run: |
+        echo "Inside job 3"
+        gradle -v
+  job4: 
+    runs-on: ubuntu-latest
+    container:
+      image: bitnami/kubectl
+    needs: job3
+    steps:
+    - name: Calculate kubectl version
+      run: |
+        echo "Inside job 4"
+        kubectl version --client

@@ -1,0 +1,35 @@
+name: Custom Actions
+on: push
+
+jobs:
+  custom-actions:
+    runs-on: ubuntu-latest
+    container:
+      image: node
+    steps:
+    - name: Checkout the repo
+      uses: actions/checkout@v2
+    - name: Execute custom action
+      uses: ./.github/actions/hello
+      id: greet
+      with:
+        who-to-greet: "World"
+    - name: Display the time during the module execution
+      env:
+        HELLO: "Ola"
+      run: |
+        echo "Time: ${{ steps.greet.outputs.time }}"
+        echo "Value of HELLO: $HELLO"
+    - name: Execute Hello docker action
+      uses: ./.github/actions/hello-docker
+      id: docker-action
+      with:
+        who-to-greet: "Sid-docker"
+    - name: Display from docker action
+      env:
+        HELLO: Ola-Docker
+        PACPAC: Two
+      run: |
+        echo "Time from Docker: ${{ steps.docker-action.outputs.time }}"
+        echo "Hello $HELLO"
+        echo "PACPAC: $PACPAC"

@@ -1,0 +1,19 @@
+name: Hello World
+author: Sid
+description: Action for greeting
+inputs:
+  who-to-greet:
+    description: "Who to greet"
+    required: true
+    default: Sid
+outputs:
+  time:
+    description: "Time of execution"
+  pacpac:
+    description: "Sample cariable"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  # entrypint:
+  args:
+  - ${{ inputs.who-to-greet }}

@@ -1,5 +1,7 @@
 name: Functions
-on: push
+on: 
+- push
+- pull_request  
 
 jobs:
   functions:
@@ -13,7 +15,7 @@ jobs:
           echo ${{ format('Hello {0} {1} {2}', 'World','!','!') }}
   one:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull-request'
+    if: github.event_name == 'pull_request'
     steps:
       - name: Dump GitHub context
         env:

@@ -1,0 +1,22 @@
+name: Issue Creation
+on: push
+
+jobs:
+  issue-creator:
+    runs-on: ubuntu-latest
+    container:
+      image: node
+    steps:
+    - name: Repo checkout
+      uses: actions/checkout@v2
+    - name: Create an issue
+      uses: ./.github/actions/issue
+      id: issue
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: Title of the actions for customization
+        body: This is an issue created for the github custom actions
+        assignees: 'sibh8'
+    - name: Display the response
+      run: |
+        echo "Issue response: ${{ steps.issue.outputs.issue }}"
