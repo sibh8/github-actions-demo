@@ -2,7 +2,7 @@
 
 echo "::debug ::Debug Message"
 echo "::warning:: Warning Message"
-echo "::error ::Error Message"
+# echo "::error ::Error Message"
 
 
 # Adding a secret.
